@@ -1,0 +1,40 @@
+SELECT 
+orders.id AS order_id,
+orders.date AS order_date,
+products.name AS product_name,
+products.unit AS product_unit,
+products.price AS product_price,
+order_details.quantity AS product_quantity,
+categories.name AS category_name,
+categories.description AS category_description,
+customers.name AS customer_name,
+customers.contact AS customer_contact,
+customers.address AS customer_address,
+customers.city AS customer_city,
+customers.postal_code AS customer_postal_code,
+customers.country AS customer_country,
+employees.first_name AS employee_firstname,
+employees.last_name AS employee_lastname,
+employees.birthdate AS employee_birthdate,
+employees.photo AS employee_photo,
+employees.notes AS employee_notes,
+shippers.name AS shipper_name,
+shippers.phone AS shipper_phone,
+suppliers.name AS supplier_name,
+suppliers.contact AS supplier_contact,
+suppliers.address AS supplier_address,
+suppliers.city AS supplier_city,
+suppliers.postal_code AS supplier_postal_code,
+suppliers.country AS supplier_country,
+suppliers.phone AS supplier_phone
+FROM order_details 
+INNER JOIN orders ON orders.id = order_details.order_id
+INNER JOIN customers ON customers.id = orders.customer_id
+INNER JOIN employees ON employees.employee_id = orders.employee_id
+INNER JOIN shippers ON shippers.id = orders.shipper_id
+INNER JOIN products ON products.id = order_details.product_id
+INNER JOIN suppliers ON suppliers.id = products.supplier_id
+INNER JOIN categories ON categories.id = products.category_id
+WHERE employees.employee_id > 3 
+and employees.employee_id <= 10
+ORDER BY orders.id

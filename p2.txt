@@ -1,0 +1,58 @@
+USE LibraryManagement;
+
+INSERT INTO authors (author_name) VALUES
+('Robert C. Martin'),
+('Martin Fowler'),
+('Kent Beck'),
+('Donald Knuth'),
+('Bjarne Stroustrup'),
+('Douglas Crockford');
+
+INSERT INTO genres (genre_name) VALUES
+('Software Development'),
+('Computer Science'),
+('Programming Languages'),
+('Algorithms'),
+('Software Architecture'),
+('Web Development');
+
+INSERT INTO books (title, publication_year, author_id, genre_id) VALUES
+('Clean Code', 2008, 1, 1),
+('Refactoring', 1999, 2, 1),
+('Test Driven Development', 2003, 3, 1),
+('The Art of Computer Programming', 1968, 4, 2),
+('The C++ Programming Language', 1985, 5, 3),
+('JavaScript: The Good Parts', 2008, 6, 6),
+('Introduction to Algorithms', 1990, 4, 4),
+('Clean Architecture', 2017, 1, 5),
+('Patterns of Enterprise Application Architecture', 2002, 2, 5),
+('The Pragmatic Programmer', 1999, 3, 1);
+
+INSERT INTO users (username, email) VALUES
+('liam_clark', 'liam.clark@example.com'),
+('olivia_martin', 'olivia.martin@example.com'),
+('noah_wilson', 'noah.wilson@example.com'),
+('emma_lee', 'emma.lee@example.com'),
+('james_smith', 'james.smith@example.com'),
+('isabella_jones', 'isabella.jones@example.com'),
+('benjamin_moore', 'benjamin.moore@example.com'),
+('sophia_garcia', 'sophia.garcia@example.com'),
+('ethan_davis', 'ethan.davis@example.com'),
+('mia_rodriguez', 'mia.rodriguez@example.com');
+
+INSERT INTO borrowed_books (book_id, user_id, borrow_date, return_date) VALUES
+(1, 1, '2024-01-02', '2024-01-16'),
+(2, 2, '2024-01-18', '2024-02-01'),
+(3, 2, '2024-02-05', '2024-02-19'),
+(4, 3, '2024-02-21', '2024-03-07'),
+(5, 4, '2024-03-10', '2024-03-24'),
+(6, 4, '2024-03-26', '2024-04-09'),
+(7, 5, '2024-04-12', '2024-04-26'),
+(8, 6, '2024-04-29', '2024-05-13'),
+(9, 7, '2024-05-15', '2024-05-29'),
+(10, 7, '2024-06-01', '2024-06-15'),
+(1, 8, '2024-06-17', '2024-07-01'),
+(2, 9, '2024-07-03', '2024-07-17'),
+(3, 9, '2024-07-19', '2024-08-02'),
+(4, 10, '2024-08-04', '2024-08-18'),
+(5, 10, '2024-08-20', '2024-09-03');
